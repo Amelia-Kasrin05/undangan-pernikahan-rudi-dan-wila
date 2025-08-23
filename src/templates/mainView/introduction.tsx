@@ -74,7 +74,7 @@ export default function Introduction({ refBride, windowWidth }: { refBride: any;
     <MainLayout>
       <div ref={mergedRef} className="relative flex justify-center items-center w-full max-w-[350px] -my-10">
         <div className={`bismillah-overlay absolute w-full h-20 bg-white origin-right transition-transform duration-700 delay-200 ${bismillah.isVisible ? "scale-x-0" : "scale-x-100"}`} />
-       <img src="/bismillah.png" alt="bismillah" loading="lazy" />
+        <img src="/bismillah.png" alt="bismillah" loading="lazy" />
       </div>
 
       <div className="text-center flex flex-col items-center px-4">
@@ -85,12 +85,12 @@ export default function Introduction({ refBride, windowWidth }: { refBride: any;
         <p className="text-gray-600 mb-6">Kami yang berbahagia,</p>
 
         {/* Simplified Profile Cards - No complex refs */}
-        <ProfileCard name="Hikmah Suciani, S.Pd ,Gr" desc="Putri Pertama dari Bapak Mufrinal, S.Pd.I dan Ibu Kasmaweni" instagramLink="https://www.instagram.com/hikmahsucianii?igsh=MTd5YWU4YTFzN21sdw==" />
+        <ProfileCard name="Rudi Mardiansah" desc="Anak ke-2 putra dari Bapak Hamdaniwal dan Ibu Lina Fitri Yeni" instagramLink="https://www.instagram.com/rmd__1959?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
 
-        <ProfileCard name="Uji Purnomo Aji, S.P" desc="Putra Ketiga dari Bapak Suyadi dan Ibu Sugiyanti" instagramLink="https://www.instagram.com/sajakataji?igsh=MTFhZTlycDRtZng2OQ==" />
+        <ProfileCard name="Wila Novita Sari, AM.d" desc="Anak ke-1 putri tunggal dari Bapak Jusrul (Alm.) dan Ibu Desmaini" instagramLink="https://www.instagram.com/wilaadekk/?utm_source=ig_web_button_share_sheet" />
 
         <footer className="mx-5 mt-10 flex flex-col gap-10">
-          <p className="text-gray-600 text-lg sm:text-xl md:text-2xl font-medium">Sabtu, 06 September 2025</p>
+          <p className="text-gray-600 text-lg sm:text-xl md:text-2xl font-medium">Kamis, 25 September 2025</p>
 
           <div ref={countdown.ref} className="flex gap-3 justify-center">
             <CountdownCard isInView={countdown.isVisible} num={time.days} desc="Days" />
@@ -104,10 +104,7 @@ export default function Introduction({ refBride, windowWidth }: { refBride: any;
             windowWidth={windowWidth}
             img="/calendar.png"
             onClick={() => {
-              window.open(
-                "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGc5OGIyb2tjMmY0NGtlMWg4bzI2aDY0dnUgMWJiNTJjNGUyOTMyNWY3MDRmNDJjMjM5NjIyM2I2NTFhOTZiMTg3ZGUyYzYzMzk1NTI2MGQ1ZjQxNjE5ZThiMEBn&tmsrc=1bb52c4e29325f704f42c2396223b651a96b187de2c633955260d5f41619e8b0%40group.calendar.google.com",
-                "_blank"
-              );
+              window.open("https://calendar.app.google/tuxKNUdYyXiaboUK8", "_blank");
             }}
           >
             Ingatkan Via Google Kalender

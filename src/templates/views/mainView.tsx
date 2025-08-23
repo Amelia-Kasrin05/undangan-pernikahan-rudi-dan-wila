@@ -15,7 +15,6 @@ import Gift from "../mainView/gift";
 import Schedule from "../mainView/schedule";
 import Comment from "../mainView/comment";
 import Rsvp from "../mainView/rsvp";
-import LoveStory from "../mainView/loveStory";
 
 export default function MainView({ isOpen, audio }: { isOpen: boolean; audio: any }) {
   const windowWidth = useWindowWidth();
@@ -25,7 +24,6 @@ export default function MainView({ isOpen, audio }: { isOpen: boolean; audio: an
   const refLocation = useRef(null);
   const refSchedule = useRef(null);
   const refComment = useRef(null);
-  const refLoveStory = useRef(null);
 
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollAnimationRef = useRef<number | null>(null);
@@ -59,54 +57,54 @@ export default function MainView({ isOpen, audio }: { isOpen: boolean; audio: an
     }
   };
 
-const handleScrollDown = () => {
-  if (isScrolling) {
-    if (scrollAnimationRef.current) {
-      cancelAnimationFrame(scrollAnimationRef.current);
-      scrollAnimationRef.current = null;
-    }
-    setIsScrolling(false);
-    return;
-  }
-
-  setIsScrolling(true);
-  const startPosition = window.pageYOffset;
-  const targetPosition = document.documentElement.scrollHeight - window.innerHeight;
-  const distance = targetPosition - startPosition;
-
-  // KECEPATAN SANGAT SANGAT PELAN - SLOW MOTION
-  const baseSpeed = 1; // pixel per detik (super pelan seperti slow motion)
-  const minDuration = 20000; // minimal 20 detik
-  const maxDuration = 80000; // maksimal 60 detik (1 menit)
-  
-  const calculatedDuration = (distance / baseSpeed) * 1000;
-  const duration = Math.max(Math.min(calculatedDuration, maxDuration), minDuration);
-
-  let startTime: number | null = null;
-
-  const animation = (currentTime: number) => {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const progress = Math.min(timeElapsed / duration, 1);
-
-    // Linear untuk kecepatan konsisten seperti slow motion
-    const currentPosition = startPosition + distance * progress;
-    
-    window.scrollTo({
-      top: currentPosition,
-      behavior: 'auto'
-    });
-
-    if (progress < 1) {
-      scrollAnimationRef.current = requestAnimationFrame(animation);
-    } else {
+  const handleScrollDown = () => {
+    if (isScrolling) {
+      if (scrollAnimationRef.current) {
+        cancelAnimationFrame(scrollAnimationRef.current);
+        scrollAnimationRef.current = null;
+      }
       setIsScrolling(false);
-      scrollAnimationRef.current = null;
+      return;
     }
-  };
 
-  scrollAnimationRef.current = requestAnimationFrame(animation);
-};
+    setIsScrolling(true);
+    const startPosition = window.pageYOffset;
+    const targetPosition = document.documentElement.scrollHeight - window.innerHeight;
+    const distance = targetPosition - startPosition;
+
+    // KECEPATAN SANGAT SANGAT PELAN - SLOW MOTION
+    const baseSpeed = 1; // pixel per detik (super pelan seperti slow motion)
+    const minDuration = 20000; // minimal 20 detik
+    const maxDuration = 80000; // maksimal 60 detik (1 menit)
+
+    const calculatedDuration = (distance / baseSpeed) * 1000;
+    const duration = Math.max(Math.min(calculatedDuration, maxDuration), minDuration);
+
+    let startTime: number | null = null;
+
+    const animation = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+
+      // Linear untuk kecepatan konsisten seperti slow motion
+      const currentPosition = startPosition + distance * progress;
+
+      window.scrollTo({
+        top: currentPosition,
+        behavior: "auto",
+      });
+
+      if (progress < 1) {
+        scrollAnimationRef.current = requestAnimationFrame(animation);
+      } else {
+        setIsScrolling(false);
+        scrollAnimationRef.current = null;
+      }
+    };
+
+    scrollAnimationRef.current = requestAnimationFrame(animation);
+  };
   useEffect(() => {
     if (!audio?.current) {
       return;
@@ -191,7 +189,7 @@ const handleScrollDown = () => {
             <Schedule refSchedule={refSchedule} />
             <Doa />
             <Gift />
-            <LoveStory refLoveStory={refLoveStory} />
+
             <Rsvp name={name} />
             <Comment refComment={refComment} name={name} />
             <EndFooter />

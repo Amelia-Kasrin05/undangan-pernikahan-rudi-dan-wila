@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Schedule({ refSchedule }: { refSchedule: any }) {
   const text1 = useVisibility(); // Untuk "Susunan Acara"
-  const text3 = useVisibility(); // Untuk "06 September 2025" dan isinya
+  const text3 = useVisibility(); // Untuk "25 September 2025" dan isinya
 
   return (
     <MainLayout className="gap-5" height="h-full">
@@ -22,9 +22,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
             animate={text3.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-400 mb-8 text-center"
-          >
-            06 September 2025
-          </motion.h2>
+          ></motion.h2>
 
           {/* Timeline Container - Modern Timeline Design */}
           <div ref={text3.ref} className="w-full max-w-xs mx-auto relative">
@@ -56,7 +54,8 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                 className="ml-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-blue-100/50 flex-1 hover:shadow-xl transition-all duration-300"
               >
                 <h3 className="font-bold text-gray-700 mb-1 text-lg">Akad Nikah</h3>
-                <p className="text-gray-500 text-sm">09.00 WIB - Selesai</p>
+                <p className="font-bold text-gray-500 text-sm">21 September 2025</p>
+                <p className="text-gray-500 text-sm">08.00 WIB - Selesai</p>
               </motion.div>
             </motion.div>
 
@@ -80,6 +79,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                 className="ml-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-pink-100/50 flex-1 hover:shadow-xl transition-all duration-300"
               >
                 <h3 className="font-bold text-gray-700 mb-1 text-lg">Resepsi</h3>
+                <p className="font-bold text-gray-500 text-sm">25 September 2025</p>
                 <p className="text-gray-500 text-sm">11.00 WIB - Selesai</p>
               </motion.div>
             </motion.div>

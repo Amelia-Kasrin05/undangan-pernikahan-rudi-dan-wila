@@ -11,7 +11,7 @@ import RsvpAdmin from "./templates/views/rsvpAdmin";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const audioDownload = new Audio("/audio/Beautiful In White Compress.mp3");
+  const audioDownload = new Audio("/audio/Randy Chow - Urang Minang Baralek Gadang.mp3");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   function preloadAudio(audioElement: HTMLAudioElement) {
     return new Promise((resolve, reject) => {
@@ -58,15 +58,15 @@ function App() {
           element={
             <>
               <Helmet>
-                <meta property="og:title" content="The Wedding Of Hikmah and Uji" />
-                <meta property="og:description" content="06 September 2025" />
+                <meta property="og:title" content="The Wedding Of Rudi and Wila" />
+                <meta property="og:description" content="25 September 2025" />
                 <meta property="og:image" content="/images/welcome.jpg" />
                 <meta property="og:image:alt" content="The image is an image of the bride" />
                 <meta property="og:image:type" content="image/jpg" />
                 <meta property="og:image:width" content="1080" />
                 <meta property="og:image:height" content="1080" />
                 <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="Uji & Hikmah" />
+                <meta property="og:site_name" content="Wila & Rudi" />
                 <meta property="og:url" content="https://undangan-pernikahan-hikmah-dan-uji.vercel.app/" />
                 <meta http-equiv="cache-control" content="no-cache" />
                 <meta http-equiv="pragma" content="no-cache" />
@@ -99,7 +99,7 @@ function App() {
               {/* <audio
                 ref={audio}
                 id="audio"
-                src="/audio/Beautiful In White Compress.mp3"
+                src="/audio/Randy Chow - Urang Minang Baralek Gadang.mp3"
                 loop
               >
                 Your browser does not support the audio element.

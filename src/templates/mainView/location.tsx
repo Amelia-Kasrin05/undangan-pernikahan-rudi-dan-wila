@@ -21,8 +21,14 @@ export default function Location({ refLocation }: { refLocation: any }) {
   return (
     <MainLayout className="gap-10">
       <div ref={refLocation} className="flex flex-col gap-5 z-10">
-        <LocationCard title="Akad Nikah" date="Sabtu, 06 September 2025" time="09.00 WIB - Selesai" home="Kediaman mempelai wanita" location="Jl. Villa Idaman blok A5, Sungai Sapih, Kec. Kuranji, Kota Padang" />
-        <LocationCard title="Resepsi" date="Sabtu, 06 September 2025" time="11.00 WIB - Selesai" home="Kediaman mempelai wanita" location="Jl. Villa Idaman blok A5, Sungai Sapih, Kec. Kuranji, Kota Padang" />
+        <LocationCard title="Akad Nikah" date="Minggu, 21 September 2025" time="08.00 WIB - Selesai" home="Kediaman mempelai wanita" location="Jalan Perwira 1 No 41 RT 02 RW 9 Katanahan, Kota Padang" />
+        <LocationCard
+          title="Resepsi"
+          date="Kamis, 25 September 2025"
+          time="11.00 WIB - Selesai"
+          home="Kediaman mempelai pria"
+          location="Jalan Ali Haji sebelum musholla Ad-Dahrun simpang sebelah kiri ( jalan kulim) RT 005 RW 003, kelurahan Pematang Reba, Kecamatan Rengat Barat"
+        />
       </div>
 
       <motion.p ref={text1.ref} animate={text1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }} transition={{ duration: 0.7 }} className="text-center text-gray-600">
@@ -46,7 +52,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
             color: "#986a52",
           }}
         >
-          Hikmah
+          Rudi
         </div>
 
         <div
@@ -66,7 +72,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
             color: "#986a52",
           }}
         >
-          Uji
+          Wila
         </div>
       </motion.div>
 

@@ -24,17 +24,6 @@ export default function Gift() {
         <div className="flex flex-col gap-8 pt-4">
           {/* Bank Options */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-center items-start w-full px-4">
-            {/* BRI - Hikmah Suciani */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col items-center w-full md:w-1/2 max-w-[280px] mx-auto bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
-            >
-              <motion.img src="/images/bri-logo.jpeg" alt="Logo BRI" className="max-w-[120px] w-full mb-4 rounded-lg" whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }} />
-              <Bank rek="542201017088533" name="A.n Hikmah Suciani" />
-            </motion.div>
-
             {/* BCA - Uji Purnomo Aji */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -43,7 +32,11 @@ export default function Gift() {
               className="flex flex-col items-center w-full md:w-1/2 max-w-[280px] mx-auto bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
             >
               <motion.img src="/images/bca-logo.jpeg" alt="Logo BCA" className="max-w-[120px] w-full mb-4 rounded-lg" whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }} />
-              <Bank rek="8527025456" name="A.n Uji Purnomo Aji" />
+              <Bank
+                rek="2200711770"
+                name="A.n Rudi mardiansah
+"
+              />
             </motion.div>
           </div>
 
@@ -66,7 +59,7 @@ export default function Gift() {
               </svg>
               <p className="text-amber-700 font-semibold">Alamat Pengiriman Kado</p>
             </div>
-            <p className="text-gray-700 leading-relaxed">Hikmah, komplek, Jl. Villa Idaman blok A5, Sungai Sapih, Kec. Kuranji, Kota Padang, Sumatera Barat</p>
+            <p className="text-gray-700 leading-relaxed">Rudi, Jalan Ali Haji sebelum musholla Ad-Dahrun simpang sebelah kiri ( jalan kulim) RT 005 RW 003, kelurahan Pematang Reba, Kecamatan Rengat Barat</p>
           </motion.div>
         </div>
       </motion.div>
