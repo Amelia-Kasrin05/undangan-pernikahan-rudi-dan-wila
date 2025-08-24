@@ -65,9 +65,23 @@ export default function ProfileCard({ name, desc, instagramLink }: { name: strin
           </span>
         </h1>
 
-        {/* Instagram Link */}
+        {/* Instagram Link - Fixed clickability issues */}
         {instagramLink && (
-          <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="profile-instagram flex items-center justify-center gap-2 text-gray-600 hover:text-blue-400 transition-colors duration-300 mt-3">
+          <a
+            href={instagramLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="profile-instagram flex items-center justify-center gap-2 text-gray-600 hover:text-blue-400 transition-colors duration-300 mt-3 cursor-pointer relative z-10"
+            style={{
+              pointerEvents: "auto",
+              touchAction: "manipulation",
+            }}
+            onClick={(e) => {
+              console.log("[v0] Instagram link clicked:", instagramLink);
+              // Ensure the link works by preventing any interference
+              e.stopPropagation();
+            }}
+          >
             <Instagram className="w-5 h-5" />
             <span className="text-sm">@{name.split(" ")[0].toLowerCase()}</span>
           </a>

@@ -1,3 +1,5 @@
+"use client";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import MainView from "./templates/views/mainView";
