@@ -36,7 +36,7 @@ export default function Introduction({ refBride, windowWidth }: { refBride: any;
     seconds: 0,
   });
 
-  const countdownDate = new Date("September 06, 2025 09:00:00").getTime();
+  const countdownDate = new Date("September 25, 2025 11:00:00").getTime();
 
   // FIX: Pindahkan interval ke useEffect dan bersihkan
   useEffect(() => {
