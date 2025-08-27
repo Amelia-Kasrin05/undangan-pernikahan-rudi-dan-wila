@@ -74,20 +74,8 @@ export default function Introduction({ refBride, windowWidth }: { refBride: any;
   return (
     <MainLayout>
       {/* Bismillah sebagai teks dengan animasi seperti pada doa */}
-      <motion.div
-        ref={mergedRef}
-        className="text-center mb-6 px-4"
-        animate={
-          bismillah.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }
-        }
-        transition={{ duration: 0.7 }}
-      >
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-relaxed">
-          بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-        </h1>
-        <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-2 font-light">
-          Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang
-        </p>
+      <motion.div ref={mergedRef} className="text-center mb-6 px-4" animate={bismillah.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }} transition={{ duration: 0.7 }}>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-relaxed">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
       </motion.div>
 
       <div className="text-center flex flex-col items-center px-4">
