@@ -5,7 +5,7 @@ import {
   retrieveData,
   addReply,
   retrieveReplies,
-  ReplyType, // Import ReplyType dari services.ts
+  ReplyType,
 } from "../../services/firebase/services";
 import CommentBox from "../components/commentBox";
 import MainLayout from "../components/mainLayout";
@@ -15,14 +15,13 @@ import { motion } from "framer-motion";
 
 type FirestoreTimestamp = { seconds: number; nanoseconds: number };
 
-// Update commentTypes untuk menyertakan replies
 type CommentTypes = {
   id: string;
   name?: string;
   comment?: string;
   created_at?: FirestoreTimestamp;
   update_at?: FirestoreTimestamp;
-  replies?: ReplyType[]; // Gunakan ReplyType yang diimpor
+  replies?: ReplyType[];
 };
 
 export default function Comment({ refComment, name }: { refComment: any; name?: string }) {
@@ -54,7 +53,6 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
       mainComments.map(async (comment) => {
         const replies = await retrieveReplies(comment.id);
         const sortedReplies = replies.sort((a: ReplyType, b: ReplyType) => {
-          // Pastikan tipe di sini juga ReplyType
           const dateA: Date = convertTimestampToDate(a.created_at);
           const dateB: Date = convertTimestampToDate(b.created_at);
           return dateA.getTime() - dateB.getTime();
@@ -144,7 +142,12 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
 
   return (
     <MainLayout height="h-full" className="gap-5">
-      <motion.h1 animate={text1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} transition={{ duration: 0.7 }} ref={refComment} className="text-xl latin-20 text-center">
+      <motion.h1 
+        animate={text1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} 
+        transition={{ duration: 0.7 }} 
+        ref={refComment} 
+        className="text-xl latin-20 text-center"
+      >
         Kirim Ucapan & Doa Restu
       </motion.h1>
       <form ref={text1.ref} onSubmit={handleFormSubmit} className="flex flex-col gap-2 w-full z-10">
@@ -159,7 +162,7 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
           defaultValue={name}
           disabled
           readOnly
-          className="border p-2 bg-gray-200 capitalize"
+          className="border border-maroon-400 p-2 bg-gray-200 capitalize rounded-lg"
         />
         <motion.input
           ref={input2.ref}
@@ -171,13 +174,19 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
           disabled={name === "@rudinwila_admin"}
           value={commentInput}
           onChange={(e) => setCommentInput(e.target.value)}
-          className="border p-2 bg-gray-200 outline-none"
+          className="border border-maroon-400 p-2 bg-gray-200 outline-none rounded-lg focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
         />
-        <motion.button ref={btn1.ref} animate={btn1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} transition={{ duration: 0.7 }} type="submit" className="bg-blue-400 px-3 py-2 text-white rounded-full">
+        <motion.button 
+          ref={btn1.ref} 
+          animate={btn1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} 
+          transition={{ duration: 0.7 }} 
+          type="submit" 
+          className="btn-maroon hover:btn-maroon"
+        >
           Kirim
         </motion.button>
       </form>
-      <div className="max-h-[180px] bg-white overflow-y-scroll comment-scrollbar z-10 w-full">
+      <div className="max-h-[180px] bg-white/90 backdrop-blur-sm overflow-y-scroll comment-scrollbar z-10 w-full rounded-lg border border-maroon-200">
         {comments?.map((comment) => (
           <CommentBox
             key={comment.id}

@@ -55,8 +55,21 @@ body {
     color: #9ca3af !important;
   }
 
-  .text-blue-400 {
-    color: #60a5fa !important;
+  /* Update warna tema maroon dan emas */
+  .text-maroon-400 {
+    color: #B91C1C !important;
+  }
+
+  .bg-maroon-400 {
+    background-color: #B91C1C !important;
+  }
+
+  .text-gold-400 {
+    color: #D4AF37 !important;
+  }
+
+  .bg-gold-400 {
+    background-color: #D4AF37 !important;
   }
 }
 
@@ -69,7 +82,7 @@ button {
   -webkit-color-scheme: light only !important;
 }
 
-/* Override untuk scrollbar */
+/* Override untuk scrollbar dengan tema maroon */
 ::-webkit-scrollbar {
   background-color: #ffffff !important;
 }
@@ -133,14 +146,16 @@ button {
   }
 }
 
+/* Update scrollbar dengan tema maroon */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-blue-300;
+  background: linear-gradient(45deg, #7F1D1D, #8B5CF6) !important;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-white rounded-full;
+  background: #ffffff !important;
+  border-radius: 9999px;
 }
 
 .comment-scrollbar::-webkit-scrollbar {
@@ -148,10 +163,10 @@ button {
 }
 
 .comment-scrollbar::-webkit-scrollbar-track {
-  @apply bg-white;
+  background-color: #ffffff !important;
 }
 .comment-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-blue-300;
+  background: linear-gradient(45deg, #7F1D1D, #D4AF37) !important;
 }
 
 .hidden-scrollbar {
@@ -188,12 +203,14 @@ button {
   font-size: 40px;
   font-family: GreatVibes-Regular;
   line-height: 1.2;
+  color: #7F1D1D; /* Maroon color for decorative text */
 }
 .latin-25 {
   font-weight: 300;
   font-size: 45px;
   font-family: GreatVibes-Regular;
   line-height: 1.2;
+  color: #7F1D1D; /* Maroon color for decorative text */
 }
 
 /* For Chrome, Safari, Edge, and Opera */
@@ -233,6 +250,7 @@ input[type="number"] {
 .font-preload {
   display: none !important;
 }
+
 /* Optimasi Performa untuk Scroll dan Animasi */
 
 /* Gunakan GPU acceleration untuk elemen yang beranimasi */
@@ -299,4 +317,73 @@ img {
 /* Sembunyikan div dengan class font-preload yang berisi "Rudi & Wila" */
 .font-preload {
   display: none !important;
+}
+
+/* Custom Maroon & Gold Theme Classes */
+.bg-maroon-gradient {
+  background: linear-gradient(135deg, #7F1D1D 0%, #991B1B 50%, #B91C1C 100%);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F7DC6F 50%, #FFD700 100%);
+}
+
+.bg-maroon-gold-gradient {
+  background: linear-gradient(135deg, #7F1D1D 0%, #D4AF37 50%, #7F1D1D 100%);
+}
+
+.text-maroon-600 {
+  color: #7F1D1D;
+}
+
+.text-maroon-700 {
+  color: #6B1D1D;
+}
+
+.text-gold-600 {
+  color: #D4AF37;
+}
+
+.text-gold-700 {
+  color: #B8941F;
+}
+
+.border-maroon-400 {
+  border-color: #B91C1C;
+}
+
+.border-gold-400 {
+  border-color: #D4AF37;
+}
+
+/* Maroon themed buttons */
+.btn-maroon {
+  background: linear-gradient(135deg, #7F1D1D, #B91C1C);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(127, 29, 29, 0.3);
+}
+
+.btn-maroon:hover {
+  background: linear-gradient(135deg, #6B1D1D, #991B1B);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(127, 29, 29, 0.4);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37, #FFD700);
+  color: #7F1D1D;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(212, 175, 55, 0.3);
+  font-weight: 600;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #B8941F, #D4AF37);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(212, 175, 55, 0.4);
 }

@@ -30,7 +30,6 @@ export default function Navbar({ refHome, refBride, refLocation, refSchedule, re
           },
           "-=0.35"
         )
-
         .from(
           "#location",
           {
@@ -82,13 +81,13 @@ export default function Navbar({ refHome, refBride, refLocation, refSchedule, re
 
     return () => ctx.revert();
   }, []);
+  
   const [xPosition, setXPosition] = useState(12.2);
 
   const home = useInView(refHome);
   const bride = useInView(refBride);
   const location = useInView(refLocation);
   const schedule = useInView(refSchedule);
-  // const comment = useInView(refComment);
 
   useEffect(() => {
     const updateXWhenScroll = () => {
@@ -101,9 +100,6 @@ export default function Navbar({ refHome, refBride, refLocation, refSchedule, re
       } else if (schedule) {
         setXPosition(85.1);
       }
-      // else if (comment) {
-      //   setXPosition(90);
-      // }
     };
 
     window.addEventListener("scroll", updateXWhenScroll);
@@ -113,19 +109,14 @@ export default function Navbar({ refHome, refBride, refLocation, refSchedule, re
 
   const handleScroll = (desc: string) => {
     if (desc === "home") {
-      // setXPosition(10);
       refHome.current.scrollIntoView({ behavior: "smooth" });
     } else if (desc == "bride") {
-      // setXPosition(29.5);
       refBride.current.scrollIntoView({ behavior: "smooth" });
     } else if (desc === "location") {
-      // setXPosition(50);
       refLocation.current.scrollIntoView({ behavior: "smooth" });
     } else if (desc === "schedule") {
-      // setXPosition(70);
       refSchedule.current.scrollIntoView({ behavior: "smooth" });
     } else if (desc === "comment") {
-      // setXPosition(90);
       refComment.current.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -133,14 +124,30 @@ export default function Navbar({ refHome, refBride, refLocation, refSchedule, re
   return (
     <div className="fixed bottom-3 left-1/2 -translate-x-1/2 min-w-[3rem] h-12 flex justify-center items-center z-30 px-0">
       <div id="parentRounded" className="w-full h-full absolute rounded-full">
-        <div id="rounded" className="absolute w-full h-full bg-blue-400 rounded-full overflow-hidden" style={{ clipPath: "circle(13px at 50% 50%)" }} />
+        {/* Updated navbar background to maroon gradient */}
+        <div 
+          id="rounded" 
+          className="absolute w-full h-full rounded-full overflow-hidden" 
+          style={{ 
+            clipPath: "circle(13px at 50% 50%)",
+            background: "linear-gradient(135deg, #7F1D1D 0%, #B91C1C 100%)"
+          }} 
+        />
       </div>
-      <motion.div id="bgRounded" initial={{ clipPath: "circle(0px at 50% 50%)" }} animate={{ clipPath: `circle(22px at ${xPosition}% 50%)` }} className="w-full h-full absolute bg-blue-500 opacity-100" />
+      {/* Updated active indicator to gold */}
+      <motion.div 
+        id="bgRounded" 
+        initial={{ clipPath: "circle(0px at 50% 50%)" }} 
+        animate={{ clipPath: `circle(22px at ${xPosition}% 50%)` }} 
+        className="w-full h-full absolute opacity-100" 
+        style={{
+          background: "linear-gradient(135deg, #D4AF37 0%, #FFD700 100%)"
+        }}
+      />
       <Home onClick={() => handleScroll("home")} />
       <Heart onClick={() => handleScroll("bride")} />
       <Location onClick={() => handleScroll("location")} />
       <Schedule onClick={() => handleScroll("schedule")} />
-      {/* <Comment onClick={() => handleScroll("comment")} /> */}
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function Rsvp({ name }: { name: string }) {
             text2.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
           }
           transition={{ duration: 0.7 }}
-          className="font-medium"
+          className="font-medium text-gray-700 px-4"
         >
           Tanpa mengurangi rasa hormat kami kepada para tamu undangan, mohon
           sekiranya tamu undangan dapat melakukan konfirmasi kehadiran terlebih
@@ -43,6 +43,7 @@ export default function Rsvp({ name }: { name: string }) {
             text3.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
           }
           transition={{ duration: 0.7 }}
+          className="text-gray-600 px-4"
         >
           Isi konfirmasi kehadiran hanya dapat dilakukan satu kali
         </motion.p>
@@ -54,7 +55,7 @@ export default function Rsvp({ name }: { name: string }) {
           transition={{ duration: 0.7 }}
           disabled={isModalOpen}
           onClick={() => setIsModalOpen(true)}
-          className="bg-blue-400 px-3 py-2 text-white rounded-full z-10 hover:bg-blue-400/80"
+          className="btn-maroon z-10 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Isi Konfirmasi Kehadiran
         </motion.button>
