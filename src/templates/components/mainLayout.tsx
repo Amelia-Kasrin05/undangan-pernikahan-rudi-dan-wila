@@ -1,4 +1,4 @@
-import Wave from "../../assets/wave";
+
 
 export default function MainLayout({
   children,
@@ -52,9 +52,7 @@ export default function MainLayout({
           />
         </div>
       )}
-      <div className={`w-full h-full -top-10 overflow-hidden absolute z-0`}>
-        <Wave />
-      </div>
+
       {children}
     </section>
   );
