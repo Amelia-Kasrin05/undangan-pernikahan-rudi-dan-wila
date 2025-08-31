@@ -12,7 +12,6 @@ interface ButtonAnimateProps {
 
 export default function ButtonAnimate({
   button,
-  windowWidth,
   img,
   onClick,
   children,
