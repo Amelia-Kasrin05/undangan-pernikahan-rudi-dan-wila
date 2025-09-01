@@ -139,7 +139,7 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
         Kirim Ucapan & Doa Restu
       </motion.h1>
 
-      <form ref={text1.ref} onSubmit={handleFormSubmit} className="flex flex-col gap-4 w-full z-10 form-cream-maroon">
+      <form ref={text1.ref} onSubmit={handleFormSubmit} className="flex flex-col gap-4 w-full z-10">
         <motion.input
           ref={input1.ref}
           animate={input1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
@@ -151,7 +151,7 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
           defaultValue={name}
           disabled
           readOnly
-          className="border-2 border-maroon-400 p-3 bg-cream-light capitalize rounded-xl font-medium text-maroon-700 cursor-not-allowed opacity-75"
+          className="border-2 border-maroon-600 p-3 bg-cream-light capitalize rounded-xl font-medium text-maroon-700 cursor-not-allowed opacity-75 focus:border-maroon-600 focus:ring-2 focus:ring-maroon-600/20"
         />
 
         <motion.textarea
@@ -164,7 +164,7 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
           value={commentInput}
           onChange={(e) => setCommentInput(e.target.value)}
           rows={4}
-          className="border-2 border-maroon-400 p-3 bg-cream-light outline-none rounded-xl focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 resize-none transition-all duration-300"
+          className="border-2 border-maroon-600 p-3 bg-cream-light outline-none rounded-xl focus:border-maroon-700 focus:ring-2 focus:ring-maroon-600/20 resize-none transition-all duration-300 text-maroon-800 placeholder-maroon-400"
         />
 
         <motion.button ref={btn1.ref} animate={btn1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} transition={{ duration: 0.7 }} type="submit" className="btn-maroon group relative overflow-hidden">
@@ -177,7 +177,7 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
         </motion.button>
       </form>
 
-      <div className="max-h-[180px] bg-cream/90 backdrop-blur-sm overflow-y-scroll comment-scrollbar z-10 w-full rounded-xl border-2 border-maroon-400 shadow-inner">
+      <div className="max-h-[180px] bg-cream/90 backdrop-blur-sm overflow-y-scroll comment-scrollbar z-10 w-full rounded-xl border-2 border-maroon-600 shadow-inner">
         {comments?.map((comment) => (
           <CommentBox
             key={comment.id}
