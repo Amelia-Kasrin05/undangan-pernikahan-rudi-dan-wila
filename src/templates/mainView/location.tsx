@@ -115,7 +115,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
         ref={flower.ref} 
         animate={flower.isVisible ? { opacity: 1 } : { opacity: 0 }} 
         transition={{ duration: 0.7 }} 
-        className="relative max-w-[130px] h-7 w-full -mt-7"
+        className="relative max-w-[130px] h-7 w-full mt-1"
       >
         <img src="/images/undername.png" alt="" className="max-w-[130px] w-full absolute -top-6" />
       </motion.div>

@@ -124,7 +124,7 @@ export default function MainView({ isOpen, audio }: { isOpen: boolean; audio: an
         }
         className="max-w-xl w-full h-full opacity-0"
       >
-        {/* Updated background with maroon gradient */}
+        {/* Updated background dengan maroon theme */}
         <div className="absolute w-full h-full left-0 top-0 bg-maroon-gradient -z-10" />
         <div className="absolute w-full h-full left-0 top-0 flex justify-center">
           <div
@@ -135,53 +135,67 @@ export default function MainView({ isOpen, audio }: { isOpen: boolean; audio: an
               backgroundPosition: "center",
               backgroundPositionX: "46%",
               backgroundSize: "cover",
-              filter: "brightness(0.2) sepia(1) hue-rotate(320deg) saturate(2)", // Add maroon tint
+              filter: "brightness(0.2) sepia(1) hue-rotate(320deg) saturate(2)",
             }}
           />
         </div>
         {isOpen && (
           <React.Fragment>
             <div className="fixed right-2 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-10">
+              {/* Audio Button - Updated dengan tema maroon gold */}
               <button
                 onClick={handleAudio}
-                className={`w-12 h-12 rounded-full shadow-lg outline-none flex items-center justify-center transition-all duration-300 transform hover:scale-105 ${
+                className={`w-12 h-12 rounded-full shadow-lg outline-none flex items-center justify-center transition-all duration-300 transform hover:scale-105 relative overflow-hidden ${
                   isPlaying
-                    ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-green-200 hover:from-green-600 hover:to-emerald-700"
-                    : "bg-gradient-to-r from-gray-500 to-slate-600 text-white shadow-gray-200 hover:from-gray-600 hover:to-slate-700"
+                    ? "bg-maroon-gradient text-cream shadow-maroon-400 hover:shadow-maroon-300 border border-gold-400"
+                    : "bg-gray-500 text-cream shadow-gray-400 hover:bg-gray-600"
                 }`}
                 title={isPlaying ? "Pause audio" : "Play audio"}
               >
-                {isPlaying ? (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="6" y="4" width="4" height="16" rx="1" />
-                    <rect x="14" y="4" width="4" height="16" rx="1" />
-                  </svg>
-                ) : (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="5,3 19,12 5,21" />
-                  </svg>
+                {/* Glowing effect untuk playing state */}
+                {isPlaying && (
+                  <div className="absolute inset-0 bg-gold-gradient opacity-20 animate-pulse rounded-full"></div>
                 )}
+                <div className="relative z-10">
+                  {isPlaying ? (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <rect x="6" y="4" width="4" height="16" rx="1" />
+                      <rect x="14" y="4" width="4" height="16" rx="1" />
+                    </svg>
+                  ) : (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5,3 19,12 5,21" />
+                    </svg>
+                  )}
+                </div>
               </button>
 
+              {/* Scroll Button - Updated dengan tema maroon */}
               <button
                 onClick={handleScrollDown}
-                className={`w-12 h-12 rounded-full shadow-lg outline-none flex items-center justify-center transition-all duration-300 transform hover:scale-105 ${
+                className={`w-12 h-12 rounded-full shadow-lg outline-none flex items-center justify-center transition-all duration-300 transform hover:scale-105 relative overflow-hidden ${
                   isScrolling 
-                    ? "bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-orange-200 animate-pulse" 
-                    : "bg-maroon-gradient text-white shadow-red-200 hover:shadow-red-300"
+                    ? "bg-gradient-to-r from-red-600 to-maroon-700 text-cream shadow-red-300 animate-pulse border border-gold-400" 
+                    : "bg-maroon-gradient text-cream shadow-maroon-300 hover:shadow-maroon-400 border border-maroon-200 hover:border-gold-400"
                 }`}
                 title={isScrolling ? "Stop scroll" : "Scroll ke bawah"}
               >
-                {isScrolling ? (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="6" y="6" width="12" height="12" rx="2" />
-                  </svg>
-                ) : (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 5v14" />
-                    <path d="m19 12-7 7-7-7" />
-                  </svg>
+                {/* Animated background untuk scrolling state */}
+                {isScrolling && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-400/30 to-transparent animate-pulse rounded-full"></div>
                 )}
+                <div className="relative z-10">
+                  {isScrolling ? (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <rect x="6" y="6" width="12" height="12" rx="2" />
+                    </svg>
+                  ) : (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 5v14" />
+                      <path d="m19 12-7 7-7-7" />
+                    </svg>
+                  )}
+                </div>
               </button>
             </div>
             <Navbar refHome={refHome} refBride={refBride} refLocation={refLocation} refSchedule={refSchedule} refComment={refComment} />
