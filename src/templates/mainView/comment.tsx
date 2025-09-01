@@ -1,12 +1,5 @@
 import toast from "react-hot-toast";
-import {
-  addData,
-  deleteById,
-  retrieveData,
-  addReply,
-  retrieveReplies,
-  ReplyType,
-} from "../../services/firebase/services";
+import { addData, deleteById, retrieveData, addReply, retrieveReplies, ReplyType } from "../../services/firebase/services";
 import CommentBox from "../components/commentBox";
 import MainLayout from "../components/mainLayout";
 import { useEffect, useState } from "react";
@@ -142,15 +135,10 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
 
   return (
     <MainLayout height="h-full" className="gap-5">
-      <motion.h1 
-        animate={text1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} 
-        transition={{ duration: 0.7 }} 
-        ref={refComment} 
-        className="text-xl latin-20 text-center"
-      >
+      <motion.h1 animate={text1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} transition={{ duration: 0.7 }} ref={refComment} className="text-xl latin-20 text-center">
         Kirim Ucapan & Doa Restu
       </motion.h1>
-      
+
       <form ref={text1.ref} onSubmit={handleFormSubmit} className="flex flex-col gap-4 w-full z-10 form-cream-maroon">
         <motion.input
           ref={input1.ref}
@@ -165,7 +153,7 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
           readOnly
           className="border-2 border-maroon-400 p-3 bg-cream-light capitalize rounded-xl font-medium text-maroon-700 cursor-not-allowed opacity-75"
         />
-        
+
         <motion.textarea
           ref={input2.ref}
           animate={input2.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
@@ -178,14 +166,8 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
           rows={4}
           className="border-2 border-maroon-400 p-3 bg-cream-light outline-none rounded-xl focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 resize-none transition-all duration-300"
         />
-        
-        <motion.button 
-          ref={btn1.ref} 
-          animate={btn1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} 
-          transition={{ duration: 0.7 }} 
-          type="submit" 
-          className="btn-maroon group relative overflow-hidden"
-        >
+
+        <motion.button ref={btn1.ref} animate={btn1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} transition={{ duration: 0.7 }} type="submit" className="btn-maroon group relative overflow-hidden">
           <span className="relative z-10 flex items-center justify-center gap-2">
             <svg className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -194,8 +176,8 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
           </span>
         </motion.button>
       </form>
-      
-     <div className="max-h-[180px] bg-cream/90 backdrop-blur-sm overflow-y-scroll comment-scrollbar z-10 w-full rounded-xl border-2 border-maroon-400 shadow-inner">
+
+      <div className="max-h-[180px] bg-cream/90 backdrop-blur-sm overflow-y-scroll comment-scrollbar z-10 w-full rounded-xl border-2 border-maroon-400 shadow-inner">
         {comments?.map((comment) => (
           <CommentBox
             key={comment.id}

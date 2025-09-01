@@ -9,16 +9,16 @@ export default function EndFooter() {
 
   return (
     <footer className="text-center py-8 px-4 pb-20 relative z-20">
-      <p className="text-yellow-600 mb-3">Dibuat Dengan Sepenuh Hati ❤️</p>
+      <p className="text-yellow-500 mb-3">Dibuat Dengan Sepenuh Hati ❤️</p>
 
       {/* Nama Creator */}
       <div className="mb-2">
-        <p className="text-yellow-700 font-medium">by {creatorName}</p>
+        <p className="text-yellow-400 font-medium">by {creatorName}</p>
       </div>
 
       {/* Open Order Text */}
       <div className="mb-4">
-        <p className="text-yellow-600 text-sm">Open Order</p>
+        <p className="text-yellow-500 text-sm">Open Order</p>
       </div>
 
       {/* Social Media Buttons */}
