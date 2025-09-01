@@ -53,7 +53,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                 initial={{ opacity: 0, x: -10 }}
                 animate={text3.isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
-                className="ml-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border-2 border-maroon-200 hover:border-gold-400 flex-1 hover:shadow-xl transition-all duration-300"
+               className="ml-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border-2 border-maroon-400 hover:border-gold-400 flex-1 hover:shadow-xl transition-all duration-300"
               >
                 <h3 className="font-bold text-maroon-700 mb-1 text-lg">Akad Nikah</h3>
                 <p className="font-bold text-gray-600 text-sm">21 September 2025</p>
@@ -83,7 +83,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                 initial={{ opacity: 0, x: -10 }}
                 animate={text3.isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                 transition={{ duration: 0.5, delay: 1.8 }}
-                className="ml-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border-2 border-gold-200 hover:border-maroon-400 flex-1 hover:shadow-xl transition-all duration-300"
+               className="ml-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border-2 border-maroon-400 hover:border-gold-400 flex-1 hover:shadow-xl transition-all duration-300"
               >
                 <h3 className="font-bold text-maroon-700 mb-1 text-lg">Resepsi</h3>
                 <p className="font-bold text-gray-600 text-sm">25 September 2025</p>

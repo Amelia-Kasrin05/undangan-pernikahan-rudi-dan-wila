@@ -44,7 +44,7 @@ export default function Gift() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col items-center w-full md:w-1/2 max-w-[280px] mx-auto card-cream-maroon hover:shadow-xl"
+             className="flex flex-col items-center w-full md:w-1/2 max-w-[280px] mx-auto bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border-2 border-maroon-400 hover:border-gold-400 transition-all duration-300 hover:shadow-xl"
             >
               <motion.img 
                 src="/images/bca-logo.jpeg" 
@@ -82,7 +82,7 @@ export default function Gift() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="font-medium z-10 card-cream-maroon mx-4"
+            className="font-medium z-10 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border-2 border-maroon-400 hover:border-gold-400 transition-all duration-300 hover:shadow-xl mx-4"
           >
             <div className="flex items-center justify-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-full bg-maroon-gradient flex items-center justify-center">

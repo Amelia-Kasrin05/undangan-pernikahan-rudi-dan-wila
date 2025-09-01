@@ -195,7 +195,7 @@ export default function Comment({ refComment, name }: { refComment: any; name?: 
         </motion.button>
       </form>
       
-      <div className="max-h-[180px] bg-cream/90 backdrop-blur-sm overflow-y-scroll comment-scrollbar z-10 w-full rounded-xl border-2 border-maroon-200 shadow-inner">
+     <div className="max-h-[180px] bg-cream/90 backdrop-blur-sm overflow-y-scroll comment-scrollbar z-10 w-full rounded-xl border-2 border-maroon-400 shadow-inner">
         {comments?.map((comment) => (
           <CommentBox
             key={comment.id}
