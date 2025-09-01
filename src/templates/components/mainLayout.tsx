@@ -16,8 +16,7 @@ export default function MainLayout({
       {flower && (
         <div className={`w-full h-full overflow-hidden absolute z-0`}>
           {/* Background decorative elements */}
-          <img src="/images/bercak2.png" alt="" className="absolute -left-56 top-1/2 opacity-20" />
-          <img src="/images/bercak2.png" alt="" className="absolute -right-48 top-[15%] opacity-20" />
+          
 
           {/* Corner flowers - Top corners */}
           <img src="/images/bunga3.png" alt="" className="absolute top-0 left-0 w-[50dvw] max-w-56 z-0" />
