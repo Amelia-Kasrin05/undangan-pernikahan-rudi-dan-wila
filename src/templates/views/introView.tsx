@@ -14,11 +14,13 @@ export default function IntroView() {
         display: "none",
         transition: { delay: 4.5, duration: 1 },
       }}
-      className="absolute w-full h-[100dvh] flex justify-center bg-gray-200 overflow-hidden"
+      className="absolute w-full h-[100dvh] flex justify-center overflow-hidden"
+      style={{ backgroundColor: "#7F1D1D" }} // Maroon background
     >
-      <div className="absolute max-w-xl w-full p-5 h-[100dvh] flex flex-col justify-center">
+      <div className="absolute max-w-xl w-full p-5 h-[100dvh] flex flex-col justify-center" 
+           style={{ backgroundColor: "#7F1D1D" }}> {/* Maroon background */}
         <div className="relative h-[100dvh] flex flex-col justify-center items-center gap-6">
-          {/* Animasi wila - muncul pertama dengan smooth animation */}
+          {/* Animasi Rudi - muncul pertama dengan smooth animation */}
           <motion.div
             className="w-full max-w-[300px] flex justify-center"
             initial={{ opacity: 0, y: 30, scale: 0.8 }}
@@ -33,7 +35,7 @@ export default function IntroView() {
               },
             }}
           >
-            <Rudi />
+            <Rudi color="#D4AF37" /> {/* Gold color untuk visibility di maroon background */}
           </motion.div>
 
           {/* Animasi Dan - muncul kedua dengan bounce effect */}
@@ -56,10 +58,10 @@ export default function IntroView() {
               },
             }}
           >
-            <Dan />
+            <Dan color="#D4AF37" /> {/* Gold color untuk visibility di maroon background */}
           </motion.div>
 
-          {/* Animasi Rudi - muncul terakhir dengan elegant slide */}
+          {/* Animasi Wila - muncul terakhir dengan elegant slide */}
           <motion.div
             className="w-full max-w-[300px] flex justify-center"
             initial={{ opacity: 0, y: 30, scale: 0.8 }}
@@ -70,11 +72,11 @@ export default function IntroView() {
               transition: {
                 duration: 1.2,
                 delay: 2.8,
-                ease: [0.25, 0.46, 0.45, 0.94], // matching easing dengan Uji
+                ease: [0.25, 0.46, 0.45, 0.94], // matching easing dengan Rudi
               },
             }}
           >
-            <Wila />
+            <Wila color="#D4AF37" /> {/* Gold color untuk visibility di maroon background */}
           </motion.div>
         </div>
       </div>

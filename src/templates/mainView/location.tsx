@@ -85,7 +85,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
           className="text-3xl"
           style={{
             fontFamily: "GreatVibes-Regular",
-            color: "#D4AF37", // Gold color
+            color:  "#7F1D1D", // Maroon color
           }}
         >
           &
