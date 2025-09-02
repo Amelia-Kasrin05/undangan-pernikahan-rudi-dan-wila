@@ -86,9 +86,9 @@ export default function Introduction({ refBride, windowWidth }: { refBride: any;
         <p className="text-gray-600 mb-6">Kami yang berbahagia,</p>
 
         {/* Simplified Profile Cards - No complex refs */}
-        <ProfileCard name="Rudi Mardiansah" desc="Anak ke-2 putra dari Bapak Hamdaniwal dan Ibu Lina Fitri Yeni" instagramLink="https://www.instagram.com/rmd__1959?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
+        <ProfileCard name="Rudi Mardiansah" desc="Putra kedua dari Bapak Hamdaniwal dan Ibu Lina Fitri Yeni" instagramLink="https://www.instagram.com/rmd__1959?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
 
-        <ProfileCard name="Wila Novita Sari, AM.d" desc="Anak ke-1 putri tunggal dari Bapak Jusrul (Alm.) dan Ibu Desmaini" instagramLink="https://www.instagram.com/wilaadekk/?utm_source=ig_web_button_share_sheet" />
+        <ProfileCard name="Wila Novita Sari, A.Md." desc="Putri tunggal dari Bapak Jusrul (Alm.) dan Ibu Desmaini" instagramLink="https://www.instagram.com/wilaadekk/?utm_source=ig_web_button_share_sheet" />
 
         <footer className="mx-5 mt-10 flex flex-col gap-10">
           <p className="text-gray-600 text-lg sm:text-xl md:text-2xl font-medium">Kamis, 25 September 2025</p>
